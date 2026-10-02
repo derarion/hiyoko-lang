@@ -5,14 +5,14 @@ Hiyoko, named after the Japanese word for "chick", is a programming language des
 
 :warning: Hiyoko is still Under Development.
 
-:warning: Hiyoko is for beginners, but this document is written for experienced programmars.
+:warning: Hiyoko is for beginners, but this document is written for experienced programmers.
 
 ## Language Design
 
 Hiyoko aims to be **the easiest language** to learn programming and algorithms.  
 The intended users of Hiyoko are those writing code for the first time.
 
-Hiyoko helpes users learn the basics of programming and smoothly transition to full-fledged languages like Python, JavaScript, C, Java and so on.  
+Hiyoko helps users learn the basics of programming and smoothly transition to full-fledged languages like Python, JavaScript, C, Java and so on.  
 To make this possible, Hiyoko has the following features:
 
 - [Minimal Concepts](#minimal-concepts)
@@ -23,8 +23,8 @@ Hiyoko is designed solely for learning and has no practical use.
 ### Minimal Concepts
 
 Popular programming languages today have many features and concepts due to their practicality.  
-However, for complete begginers, this could be a hurdle.  
-Even some basic programs include the concepts which might be difficult for begginers.
+However, for complete beginners, this could be a hurdle.  
+Even some basic programs include the concepts which might be difficult for beginners.
 
 For example, you can write the most basic loop statement in Python like this:
 
@@ -45,7 +45,7 @@ In Hiyoko, the equivalent is as follows:
 
 ```JavaScript
 for (var i = 0; i < 10; i = i + 1 ) {
-    print(x);
+    print(i);
 }
 ```
 
@@ -57,7 +57,7 @@ Hiyoko believes that procedural programming is closer to the way humans usually 
 Another example is that Hiyoko does not perform implicit type conversion.  
 The following code in JavaScript can be written due to implicit type conversion or having multiple equality operators ( `==` and `===`).
 
-**JavasScript:**
+**JavaScript:**
 
 ```JavaScript
 let x = 1;
@@ -67,7 +67,7 @@ if(x == "1") {
 }
 ```
 
-This might confuse begginers lerning about the concept of data type, or make them unaware of their mistakes.
+This might confuse beginners learning about the concept of data type, or make them unaware of their mistakes.
 
 In Hiyoko, the equivalent outputs "Type error".
 
@@ -82,7 +82,7 @@ if(x == "1" /* Type Error */) {
 ```
 
 All operators in Hiyoko require operands with the same data types.  
-This incovenience will remind learners that each value has its own data type.
+This inconvenience will remind learners that each value has its own data type.
 
 ### Minimal and Common syntax
 
@@ -94,7 +94,7 @@ Please refer to [Language Overview](#language-overview) section.
 ### Statement
 
 The program consists of statements.  
-A statements that do not have a block **always** ends with `;`.
+A statement that does not have a block **always** ends with `;`.
 
 ```JavaScript
 42; // Expression statement
@@ -132,13 +132,13 @@ There is no empty statement unlike JavaScript:
 
 // Common binary operators are supported
 ((2 + 3) * 5 - 7 / 11) % 13; // 12
-0 < 0 // false
-0 >= 0 //true
+0 < 0; // false
+0 >= 0; // true
 
-7 / 11 // 0
+7 / 11; // 0
 
 // Unary plus and minus
--+1 // -1
+-+1; // -1
 ```
 
 #### Float
@@ -148,10 +148,10 @@ There is no empty statement unlike JavaScript:
 #### Boolean
 
 ```JavaScript
-true && false // false
+true && false; // false
 
 // The latter `false` is not evaluated (short-circuit evaluation)
-true || false // true
+true || false; // true
 
 ```
 
@@ -182,7 +182,7 @@ arr; // [1, 2, 3, 4]
 #### None
 
 ```JavaScript
-none; // Represents the absence of a value, wheter it is intentional or not
+none; // Represents the absence of a value, whether it is intentional or not
 ```
 
 ### Variable Declaration and Scope
@@ -208,7 +208,7 @@ There is no way to declare a constant value.
 
 #### Scope
 
-`var` declares a variable with block scope, so all varaiables in Hiyoko have block scope.
+`var` declares a variable with block scope, so all variables in Hiyoko have block scope.
 
 ```JavaScript
 {
@@ -217,7 +217,7 @@ There is no way to declare a constant value.
         x; // 10
     }
 }
-x; // Name error * This is not Javascript!
+x; // Name error * This is not JavaScript!
 ```
 
 ### Control Structures
@@ -266,10 +266,11 @@ for (;;) ; // Syntax error
 
 ```JavaScript
 while (x < 100) {
-    if (x % 2 == 0 ) {
+    x = x + 1;
+    if (x % 2 == 0) {
         continue;
     }
-    odd_sum =  odd_sum + x;
+    odd_sum = odd_sum + x;
 }
 ```
 
@@ -281,10 +282,10 @@ Curly braces are always required.
 while (true) ; // Syntax error
 ```
 
-### Function Declaraion and Call Operator
+### Function Declaration and Call Operator
 
 Functions cannot be treated as "first-class" citizens.  
-There is no explicit fucntion data type or literal expressions for them.
+There is no explicit function data type or literal expressions for them.
 
 ```JavaScript
 // Declaration
@@ -317,7 +318,7 @@ func add(x) {
 add(2); // 3
 ```
 
-There is no concept of hoisting, unlike JavaSciript.
+There is no concept of hoisting, unlike JavaScript.
 
 ```JavaScript
 add(1, 2); // Name error
